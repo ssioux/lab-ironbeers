@@ -4,12 +4,9 @@
    
 
     {{#each response}}
-    <h1>{{this.name}}</h1>
 
-    <img src="{{this.image_url}}" alt="beer" width="70px">
+    {{>beerpartial this}}
     
-    <p>{{this.description}} 
-    <p>{{this.tagline}}</p>
     <p>{{this.food_pairing}}</p>
     <p>{{this.brewers_tips}}</p>
 
