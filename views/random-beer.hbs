@@ -1,22 +1,19 @@
 <div>
 
 
-    <h1>random Beer</h1>
+   
 
     {{#each response}}
+    <h1>{{this.name}}</h1>
 
     <img src="{{this.image_url}}" alt="beer" width="70px">
-    <p>{{this.name}}</p> 
+    
     <p>{{this.description}} 
     <p>{{this.tagline}}</p>
     <p>{{this.food_pairing}}</p>
     <p>{{this.brewers_tips}}</p>
 
-   
-    
-  
-
-    {{/each}}
+   {{/each}}
 
 
 </div>
