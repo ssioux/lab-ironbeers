@@ -36,16 +36,31 @@ app.get('/beers', (req, res) => {
 });
 
 app.get('/random-beer', (req, res) => {
-  const randomBeer = punkAPI.getRandom();
-
   punkAPI
     .getRandom()
     .then(response => {
       console.log(response);
-      res.render('random-beer.hbs', {response});
+      res.render('random-beer.hbs', { response });
     })
     .catch(error => {
       console.log(error);
+    });
+});
+
+app.get('/beers/:id', (req, res) => {
+  console.log('entrando iteracion 6');
+
+  let { id } = req.params;
+  punkAPI
+    .getBeer(id)
+    .then(response => {
+      res.render('beer-id.hbs', {
+        response
+      });
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error)
     });
 });
 
